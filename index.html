@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Visual SQL</title>
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/styles.css">
+
+
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Visual SQL</h1>
+    </header>
+    <aside>
+        <h1>Tables</h1>
+        <div>Categories <button id="Categories" class="fa fa-plus-circle"></button></div>
+        <div>Products <button id="Products" class="fa fa-plus-circle"></button></div>
+        <div>Suppliers <button id="Suppliers" class="fa fa-plus-circle"></button></div>
+    </aside>
+    <main>
+        <header>
+            <h1>Tables</h1>
+            <section class="tables">
+                <div>
+                    <h2 data-alias="P">Products</h2>
+                    <div data-key="PK">ProductID</div>
+                    <div data-sql="S">Description</div>
+                    <div data-sql="S">Price</div>
+                    <div>InStock</div>
+                    <div data-key="FK" data-key-table="Categories">CategoryID</div>
+                </div>
+                <div>
+                    <h2 data-alias="C">Categories</h2>
+                    <div data-key="PK">CategoryID</div>
+                    <div data-sql="S">Description</div>
+                </div>
+            </section>
+        </header>
+        <footer>
+            <h1>SQL</h1>
+            <pre><code class="language-sql">SELECT P.Description, Price, C.Description
+FROM Products P
+  INNER JOIN Categories C ON P.CategoryID = C.CategoryID</code></pre>
+        </footer>
+    </main>
+    <footer>
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="http://gridbyexample.com/" target="resources">Grid by Example</a></li>
+            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="resources">A Complete Guide to Grid</a></li>
+            <li><a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="resources">Visual Guide to FlexBox</a></li>
+            <li><a href="http://prismjs.com/index.html" target="resources">Prism JS</a></li>
+        </ul>
+    </footer>
+    <script src="js/prism.js"></script>
+</body>
+</html>
